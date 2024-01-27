@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import generics
 
-# Create your views here.
+from . import serializers, models
+
+
+class MarkAPIView(generics.ListAPIView):
+    queryset = models.Mark.objects.all()
+    serializer_class = serializers.MarkSerializer

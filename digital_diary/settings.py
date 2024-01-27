@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "drf_spectacular",
     # first-party
+    "digital_diary.users.apps.UsersConfig",
     "digital_diary.diary.apps.DiaryConfig",
 ]
 
@@ -79,6 +80,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "digital_diary.urls"
+
+AUTH_USER_MODEL = "users.User"
 
 TEMPLATES = [
     {

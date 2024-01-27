@@ -5,7 +5,7 @@ from . import models
 
 @admin.register(models.Course)
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ('name', 'year')
+    list_display = ('name',)
 
 
 @admin.register(models.Subject)
@@ -15,7 +15,7 @@ class SubjectAdmin(admin.ModelAdmin):
 
 @admin.register(models.Program)
 class ProgramAdmin(admin.ModelAdmin):
-    list_display = ('course', 'subject', 'teacher')
+    list_display = ('course', 'subject', 'teacher', 'year')
 
 
 @admin.register(models.Mark)
