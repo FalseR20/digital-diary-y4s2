@@ -14,13 +14,16 @@ class TeacherCreateAPIView(generics.CreateAPIView):
 
     def perform_create(self, serializer):
         username = serializer.validated_data.pop('user_username')
-        user = models.User.objects.get(username=username, )
+        user = models.User.objects.get(username=username)
         serializer.save(user=user)
 
 
 class TeacherRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Teacher.objects.all()
     serializer_class = serializers.TeacherSerializer
+
+    def get_object(self):
+        return models.Teacher.objects.get(user__username=self.kwargs['username'])
 
     def perform_update(self, serializer):
         kwargs = {}
