@@ -1,12 +1,15 @@
 # DigitalDiary - Back-end
 
+> [!CAUTION]
+> Thanks for caution
+
 DigitalDiary back-end server uses Django with the Django REST framework.
 
 ## Quickstart
 
 ### Set virtual environment
 
-Minimal support version of Python is 3.11.
+The supported version of **Python** is **3.11** _or higher_.
 
 ```shell
 python3.11 -m virtualenv venv
@@ -16,7 +19,7 @@ pip install -r requirements.txt
 
 ### Setting database
 
-Project uses PostgreSQL
+Project uses **PostgreSQL**
 
 ```shell
 sudo -u postgres psql
@@ -53,3 +56,10 @@ SECRET_KEY=YOUR_SECRET_KEY
 ```shell
 ./manage.py runserver --noreload 
 ```
+
+### Deploy
+
+Tested with:
+
+- _Gunicorn_ WSGI
+- _Nginx_ web server
